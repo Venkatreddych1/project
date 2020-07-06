@@ -36,7 +36,7 @@ pyenchant==2.0.0
 Pygments==2.5.2
 PyGObject==3.36.0
 PyInstaller==3.6
-pyOpenSSL==17.2.0
+pyOpenSSL==17.5.0
 pyrit==0.5.1
 python-qt==0.50
 pytz==2020.1
