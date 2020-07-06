@@ -1,7 +1,8 @@
 from django import forms
+from .models import Employee
 
-class EmployeeForm(forms.Form):
-      empid=forms.IntegerField(label="Enter empid")
-      name=forms.CharField(label='Enter name',max_length=20)
-      emp_num=forms.IntegerField(label='Enter Employeenum',max_value=10)
-      department=forms.CharField(label='Enter Department')
+class EmployeeForm(forms.ModelForm):
+      class Meta:
+          model = Employee
+          fields = ['empid','emp_num','name', 'department']
+          

@@ -14,8 +14,7 @@ def insert(request):
     if request.method == 'POST':
         form = EmployeeForm(request.POST)
         if form.is_valid():
-            p1=Employee(empid=form.cleaned_data['empid'],name=form.cleaned_data['name'],emp_num=form.cleaned_data['emp_num'],department=form.cleaned_data['department'])
-            p1.save()
+            form.save()
             return HttpResponse("data inserted successfully")
     else:
         form = EmployeeForm()
