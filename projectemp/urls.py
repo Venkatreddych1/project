@@ -19,6 +19,7 @@ from Empapp import views
 
 urlpatterns = [
     url(r'^$', views.insert, name='insert'),
-    path('api/employee/',views.EmployeeList.as_view())
+    path('api/employee/',views.EmployeeList.as_view(),name="list"),
+    path('api/employee/<int:pk>/', views.EmployeeDetail.as_view(), name="detail"),
 
     ]
