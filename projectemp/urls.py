@@ -14,12 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from django.urls import path
+
 from Empapp import views
 
 urlpatterns = [
     url(r'^$', views.insert, name='insert'),
-    path('api/employee/',views.EmployeeList.as_view(),name="list"),
-    path('api/employee/<int:pk>/', views.EmployeeDetail.as_view(), name="detail"),
+    url('api/employee/',views.EmployeeList.as_view(),name="list"),
+    url('api/(?P<pk>\d+)/', views.EmployeeDetail.as_view(), name="detail"),
 
     ]

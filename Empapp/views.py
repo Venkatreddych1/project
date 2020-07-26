@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from .Serializers import EmployeeSerializer
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.generics import views
+
 
 
 def insert(request):
@@ -34,7 +34,7 @@ class EmployeeList(APIView):
 
 class EmployeeDetail(APIView):
     """
-    Retrieve, update or delete a snippet instance.
+    Retrieve, update or delete a Employee instance.
     """
     def get_object(self, pk):
         try:
