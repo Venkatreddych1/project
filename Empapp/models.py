@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Employee(models.Model):
-      empid= models.IntegerField(auto_created=True)
+      empid= models.IntegerField(primary_key=True,auto_created=True)
       name = models.CharField(max_length=20)
       emp_num= models.IntegerField()
       department = models.CharField(max_length=20)

@@ -1,18 +1,19 @@
-import json
 import requests
-
-from django.core.urlresolvers import reverse
-
-from .. import  views
+import json
 
 
-class TestMyView:
 
-    def test_result_finished(self):
-        request = get(reverse('insert'))
-        response = views.insert()(request)
+class test_view():
+  def test_post_headers_body_json(self):
+      url = 'http://127.0.0.1:8000/'
 
-        assert response.status_code == 200
+      # Body
+      payload = {"empid": 405, "name": "rajesh","emp_num": 1796,"department": "IT"}
 
-        content = json.loads(response.content)
-        assert content['result'] == 'FINISHED'
+      # convert dict to json by json.dumps() for body data.
+      resp = requests.post(url,data=json.dumps(payload))
+
+      # Validate response headers and body contents, e.g. status code.
+      assert resp.status_code == 201
+
+      # print response full body as text
